@@ -16,7 +16,19 @@ fetch(url1)
         
         let table1 = document.querySelector("#table-1");
         table1.innerHTML = html;
-
+        return json.length;
+    })
+    .then((json)=> {
+        let submitAdi = document.querySelector("#submitAdi");
+submitAdi.onclick = function () {
+    let nameAdi = document.querySelector("#staticEmail2").value;
+    let priceAdi = document.querySelector("#inputPassword2").value;
+    // let idAdi = lengthAdi++;
+    // console.log(idAdi);
+    let idAdi=json.length+1;
+    
+    createProduct({ name: nameAdi, id:idAdi , price: priceAdi });
+}
     })
     .catch(() => {
         alert("can't get data from  api (adidas)")

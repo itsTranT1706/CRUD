@@ -51,6 +51,16 @@
       "id": 7,
       "name": "giafy dor",
       "price": "110$"
+    },
+    {
+      "id": 8,
+      "name": "dior",
+      "price": "100"
+    },
+    {
+      "id": 9,
+      "name": "asd",
+      "price": "2000"
     }
   ]
 }
