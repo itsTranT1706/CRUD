@@ -1,23 +1,25 @@
 //table adidas
-let lengthAdi;
+
 let url1 = `http://localhost:3000/adidas`;
 fetch(url1)
     .then(response => response.json())
     .then((json) => {
         let htmls = json.map((data) => {
-            return `<tr> <th scope="row">${data.id}</th><td>${data.name}</td><td>${data.price}</td><td><button>delete</button></td></tr>`
+            return `<tr>`+
+                      `<th scope="row">${data.id}</th>`+
+                      `<td>${data.name}</td>`+
+                      `<td>${data.price}</td>`+
+                      `<td><button class="btn btn-danger">delete</button></td>`+
+                      `</tr>`;
         })
         let html = htmls.join(``);
-        lengthAdi = json.length;
+        
         let table1 = document.querySelector("#table-1");
         table1.innerHTML = html;
 
     })
-
-
     .catch(() => {
         alert("can't get data from  api (adidas)")
-
     })
 
 let adiElement = document.querySelector("#adi");
@@ -57,7 +59,10 @@ function createProduct(product) {
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
-    });
+    }); 
+}
+function deleteProduct(index) {
+
 }
 
 
