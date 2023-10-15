@@ -1,0 +1,56 @@
+{
+  "nike": [
+    {
+      "id": 1,
+      "name": "nike jordan",
+      "price": "500$"
+    },
+    {
+      "id": 2,
+      "name": "jordan 4",
+      "price": "650$"
+    },
+    {
+      "name": "đôi giày đỏ",
+      "price": "250$",
+      "id": 3
+    }
+  ],
+  "adidas": [
+    {
+      "id": 1,
+      "name": "stasmith",
+      "price": "100$"
+    },
+    {
+      "id": 2,
+      "name": "ultraboost",
+      "price": "150$"
+    },
+    {
+      "id": 3,
+      "name": "giày xanh",
+      "price": "200$"
+    },
+    {
+      "id": 4,
+      "name": "giày vàng",
+      "price": "220$"
+    },
+    {
+      "name": "giày tím",
+      "price": "220$",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "hello",
+      "price": "500$"
+    },
+    {
+      "id": 7,
+      "name": "giafy dor",
+      "price": "110$"
+    }
+  ]
+}

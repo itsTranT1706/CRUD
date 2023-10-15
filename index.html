@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Sports</title>
+
+</head>
+
+<body>
+    <section class="body">
+        <h1 class="neonText">SPORTS</h1>
+        <div class="row justify-content-around">
+            <div class="item" id="adi">
+                <img src="image/logoAdidas.jpg" alt="adidas">
+                <span class="caption">Adidas</span>
+            </div>
+            <div class="item" id="nik">
+                <img src="image/logoNike.jpg" alt="nike">
+                <span class="caption">Nike</span>
+            </div>
+        </div>
+
+        </div>
+        <div id ="adidas">
+            <h1>Adidas</h1>
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                  <label for="staticEmail2" class="sr-only" >Email</label>
+                  <input type="text"  class="form-control" id="staticEmail2" placeholder="Name"value="">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                  <label for="inputPassword2" class="sr-only">Password</label>
+                  <input type="text" class="form-control" id="inputPassword2" placeholder="Price">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2" id="submitAdi">Create</button>
+              </form>
+
+
+            <table class="table table-striped table-dark" >
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="table-1">
+                </tbody>
+            </table>
+        </div>
+        <div id="nike">
+            <h1>NIKE</h1>
+            <table class="table table-striped table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="table-2">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+<script src="main.js"></script>
+
+</html>

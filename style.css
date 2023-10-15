@@ -1,0 +1,60 @@
+body {
+    background: url(image/1.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.neonText {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+h1 {
+    text-align: center;
+    font-size: 65px;
+}
+
+div.item {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+    width: 120px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+
+.caption {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+    color: white;
+}
+
+h1 {
+    color: rgb(121, 130, 214);
+}
+#adidas  {
+    margin : 20% 20px;
+    
+}
+#nike {
+    margin :  20px;
+}
+
