@@ -9,7 +9,7 @@ fetch(url1)
                 `<th scope="row">${data.id}</th>` +
                 `<td>${data.name}</td>` +
                 `<td>${data.price}</td>` +
-                `<td><button class="btn btn-danger">delete</button></td>` +
+                `<td><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
                 `</tr>`;
         })
         let html = htmls.join(``);
@@ -18,7 +18,6 @@ fetch(url1)
         return json;
     })
     .then((json) => {
-        
         let submitAdi = document.querySelector("#submitAdi");
         submitAdi.onclick = function () {
             let nameAdi = document.querySelector("#staticEmail2").value;
@@ -32,7 +31,15 @@ fetch(url1)
                     id: idAdi,
                     price: priceAdi
                 })
-          
+
+        }
+        let deleteBtns = document.getElementsByClassName("btn btn-danger");
+        // console.log(deleteBtn)
+    //    console.log(deleteBtns[0].id) 
+        for (let i=0; i<deleteBtns.length; ++i) {
+            deleteBtns[i].onclick= function(e) {
+               deleteProduct(e.target.id)
+            }
         }
     })
     .catch(() => {
@@ -69,18 +76,19 @@ function createProduct(product) {
             "Content-type": "application/json; charset=UTF-8"
         }
     })
-    .then(()=> {
-        alert("added!")
-    })
+        .then(() => {
+            alert("added!")
+        })
 
 }
 function deleteProduct(index) {
-    fetch(url+index, {
+    fetch(url1 + index, {
         method: "DELETE",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
     });
+        
 }
 
 
