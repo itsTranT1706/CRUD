@@ -13,7 +13,6 @@ fetch(url1)
                 `</tr>`;
         })
         let html = htmls.join(``);
-
         let table1 = document.querySelector("#table-1");
         table1.innerHTML = html;
         return json;
@@ -32,7 +31,8 @@ fetch(url1)
                     name: nameAdi,
                     id: idAdi,
                     price: priceAdi
-                });
+                })
+          
         }
     })
     .catch(() => {
@@ -68,7 +68,11 @@ function createProduct(product) {
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
-    });
+    })
+    .then(()=> {
+        alert("added!")
+    })
+
 }
 function deleteProduct(index) {
     fetch(url+index, {

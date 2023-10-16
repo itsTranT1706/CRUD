@@ -34,17 +34,7 @@
     },
     {
       "id": 4,
-      "name": "hello",
-      "price": "110$"
-    },
-    {
-      "id": 5,
       "name": "giày thượng đình",
-      "price": "10$"
-    },
-    {
-      "id": 6,
-      "name": "giafy dor",
       "price": "110$"
     }
   ]
