@@ -1,34 +1,39 @@
 //table adidas
 
-let url1 = `http://localhost:3000/adidas`;
+let url1 = `http://localhost:3000/adidas/`;
 fetch(url1)
     .then(response => response.json())
     .then((json) => {
         let htmls = json.map((data) => {
-            return `<tr>`+
-                      `<th scope="row">${data.id}</th>`+
-                      `<td>${data.name}</td>`+
-                      `<td>${data.price}</td>`+
-                      `<td><button class="btn btn-danger">delete</button></td>`+
-                      `</tr>`;
+            return `<tr>` +
+                `<th scope="row">${data.id}</th>` +
+                `<td>${data.name}</td>` +
+                `<td>${data.price}</td>` +
+                `<td><button class="btn btn-danger">delete</button></td>` +
+                `</tr>`;
         })
         let html = htmls.join(``);
-        
+
         let table1 = document.querySelector("#table-1");
         table1.innerHTML = html;
-        return json.length;
+        return json;
     })
-    .then((json)=> {
+    .then((json) => {
+        
         let submitAdi = document.querySelector("#submitAdi");
-submitAdi.onclick = function () {
-    let nameAdi = document.querySelector("#staticEmail2").value;
-    let priceAdi = document.querySelector("#inputPassword2").value;
-    // let idAdi = lengthAdi++;
-    // console.log(idAdi);
-    let idAdi=json.length+1;
-    
-    createProduct({ name: nameAdi, id:idAdi , price: priceAdi });
-}
+        submitAdi.onclick = function () {
+            let nameAdi = document.querySelector("#staticEmail2").value;
+            let priceAdi = document.querySelector("#inputPassword2").value;
+            // let idAdi = lengthAdi++;
+            // console.log(idAdi);
+            let idAdi = json.length + 1;
+            createProduct(
+                {
+                    name: nameAdi,
+                    id: idAdi,
+                    price: priceAdi
+                });
+        }
     })
     .catch(() => {
         alert("can't get data from  api (adidas)")
@@ -52,16 +57,8 @@ nikElement.onclick = function (e) {
     element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 }
 
-let submitAdi = document.querySelector("#submitAdi");
-submitAdi.onclick = function () {
-    let nameAdi = document.querySelector("#staticEmail2").value;
-    let priceAdi = document.querySelector("#inputPassword2").value;
-    // let idAdi = lengthAdi++;
-    // console.log(idAdi);
-    createProduct({ name: nameAdi, id: 7, price: priceAdi });
-}
 function createProduct(product) {
-    fetch("http://localhost:3000/adidas", {
+    fetch(url1, {
         method: "POST",
         body: JSON.stringify({
             id: product.id,
@@ -71,10 +68,15 @@ function createProduct(product) {
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
-    }); 
+    });
 }
 function deleteProduct(index) {
-
+    fetch(url+index, {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    });
 }
 
 

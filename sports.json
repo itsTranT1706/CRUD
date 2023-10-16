@@ -29,38 +29,23 @@
     },
     {
       "id": 3,
-      "name": "giày xanh",
-      "price": "200$"
-    },
-    {
-      "id": 4,
-      "name": "giày vàng",
-      "price": "220$"
-    },
-    {
-      "name": "giày tím",
-      "price": "220$",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "hello",
-      "price": "500$"
-    },
-    {
-      "id": 7,
-      "name": "giafy dor",
-      "price": "110$"
-    },
-    {
-      "id": 8,
-      "name": "dior",
+      "name": "TRACK 6 UTILITY GUM SOLE",
       "price": "100"
     },
     {
-      "id": 9,
-      "name": "asd",
-      "price": "2000"
+      "id": 4,
+      "name": "hello",
+      "price": "110$"
+    },
+    {
+      "id": 5,
+      "name": "giày thượng đình",
+      "price": "10$"
+    },
+    {
+      "id": 6,
+      "name": "giafy dor",
+      "price": "110$"
     }
   ]
 }
