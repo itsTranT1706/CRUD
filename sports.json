@@ -18,9 +18,29 @@
   ],
   "adidas": [
     {
-      "id": 4,
+      "id": 1,
       "name": "giày thượng đình",
       "price": "110$"
+    },
+    {
+      "id": 2,
+      "name": "hello",
+      "price": "110$"
+    },
+    {
+      "id": 3,
+      "name": "hello",
+      "price": "500$"
+    },
+    {
+      "id": 4,
+      "name": "hello",
+      "price": "500$"
+    },
+    {
+      "id": 5,
+      "name": "giày màu nâu",
+      "price": "500$"
     }
   ]
 }
