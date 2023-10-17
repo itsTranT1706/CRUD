@@ -15,53 +15,35 @@ fetch(url1)
         let html = htmls.join(``);
         let table1 = document.querySelector("#table-1");
         table1.innerHTML = html;
-        return json;
-    })
-    .then((json) => {
-        let submitAdi = document.querySelector("#submitAdi");
-        submitAdi.onclick = function () {
-            let nameAdi = document.querySelector("#staticEmail2").value;
-            let priceAdi = document.querySelector("#inputPassword2").value;
-            // let idAdi = lengthAdi++;
-            // console.log(idAdi);
-            let idAdi = json.length + 1;
-            createProduct(
-                {
-                    name: nameAdi,
-                    id: idAdi,
-                    price: priceAdi
-                })
-
-        }
-        let deleteBtns = document.getElementsByClassName("btn btn-danger");
-        // console.log(deleteBtn)
-    //    console.log(deleteBtns[0].id) 
-        for (let i=0; i<deleteBtns.length; ++i) {
-            deleteBtns[i].onclick= function(e) {
-               deleteProduct(e.target.id)
-            }
-        }
+        // return json;
     })
     .catch(() => {
         alert("can't get data from  api (adidas)")
     })
-
-let adiElement = document.querySelector("#adi");
-adiElement.onclick = function (e) {
-    const element = document.getElementById("adidas");
-    element.scrollIntoView();
-    element.scrollIntoView(false);
-    element.scrollIntoView({ block: "end" });
-    element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+//POST REQUEST 
+let submitAdi = document.querySelector("#submitAdi");
+submitAdi.onclick = function () {
+    let nameAdi = document.querySelector("#staticEmail2").value;
+    let priceAdi = document.querySelector("#inputPassword2").value;
+    // let idAdi = lengthAdi++;
+    // console.log(idAdi);
+    let idAdi = deleteBtns.length + 1;
+    createProduct(
+        {
+            name: nameAdi,
+            id: idAdi,
+            price: priceAdi
+        })
 }
-
-let nikElement = document.querySelector("#nik");
-nikElement.onclick = function (e) {
-    const element = document.getElementById("nike");
-    element.scrollIntoView();
-    element.scrollIntoView(false);
-    element.scrollIntoView({ block: "end" });
-    element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+//DELETE REQUEST
+let deleteBtns = document.getElementsByClassName("btn btn-danger")[0];
+console.log(deleteBtns);
+for (let i = 0; i < deleteBtns.length; ++i) {
+    deleteBtns[i].onclick = function (e) {
+        console.log(e.target.id);
+        deleteProduct(e.target.id)
+        
+    }
 }
 
 function createProduct(product) {
@@ -76,11 +58,8 @@ function createProduct(product) {
             "Content-type": "application/json; charset=UTF-8"
         }
     })
-        .then(() => {
-            alert("added!")
-        })
-
 }
+
 function deleteProduct(index) {
     fetch(url1 + index, {
         method: "DELETE",
@@ -88,7 +67,7 @@ function deleteProduct(index) {
             "Content-type": "application/json; charset=UTF-8"
         }
     });
-        
+
 }
 
 
