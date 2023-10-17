@@ -1,5 +1,4 @@
 //table adidas
-
 let url1 = `http://localhost:3000/adidas/`;
 fetch(url1)
     .then(response => response.json())
@@ -25,8 +24,7 @@ fetch(url1)
         for (let i = 0; i < deleteBtns.length; ++i) {
             deleteBtns[i].onclick = function (e) {
                 console.log(e.target.id);
-                deleteProduct(e.target.id)
-
+                deleteProduct(e.target.id);
             }
         }
 
@@ -50,33 +48,6 @@ fetch(url1)
     .catch(() => {
         alert("can't get data from  api (adidas)")
     })
-// //DELETE REQUEST
-// let deleteBtns = document.getElementsByClassName("btn btn-danger");
-
-// for (let i = 0; i < deleteBtns.length; ++i) {
-//     deleteBtns[i].onclick = function (e) {
-//         console.log(e.target.id);
-//         deleteProduct(e.target.id)
-
-//     }
-// }
-
-// //POST REQUEST 
-// let submitAdi = document.querySelector("#submitAdi");
-// submitAdi.onclick = function () {
-//     let nameAdi = document.querySelector("#staticEmail2").value;
-//     let priceAdi = document.querySelector("#inputPassword2").value;
-//     // let idAdi = lengthAdi++;
-//     // console.log(idAdi);
-//     let idAdi = deleteBtns.length + 1;
-//     createProduct(
-//         {
-//             name: nameAdi,
-//             id: idAdi,
-//             price: priceAdi
-//         })
-// }
-
 
 function createProduct(product) {
     fetch(url1, {
