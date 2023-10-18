@@ -76,7 +76,7 @@ function deleteProduct(index) {
 
 
 //table NIKE
-let url2 = `http://localhost:3000/nike`;
+let url2 = `http://localhost:3000/nike/`;
 fetch(url2)
     .then(response => response.json())
     .then((json) => {
