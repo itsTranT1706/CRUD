@@ -75,22 +75,24 @@ function deleteProduct(index) {
 
 
 
-
-
-
 //table NIKE
-// let url2 = `http://localhost:3000/nike`;
-// fetch(url2)
-//     .then(response => response.json())
-//     .then((json) => {
-//         let htmls = json.map((data) => {
-//             return `<tr> <th scope="row">${data.id}</th><td>${data.name}</td><td>${data.price}</td></tr>`
-//         })
-//         let html = htmls.join(``);
-//         let table2 = document.querySelector("#table-2");
-//         table2.innerHTML = html;
+let url2 = `http://localhost:3000/nike`;
+fetch(url2)
+    .then(response => response.json())
+    .then((json) => {
+        let htmls = json.map((data) => {
+            return `<tr>`+
+            ` <th scope="row">${data.id}</th>`+
+            `<td>${data.name}</td>`+
+            `<td>${data.price}</td>`+
+            `<td><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
+            `</tr>`
+        })
+        let html = htmls.join(``);
+        let table2 = document.querySelector("#table-2");
+        table2.innerHTML = html;
 
-//     })
-//     .catch(() => {
-//         alert("can't get data from api (nike)")
-//     })
+    })
+    .catch(() => {
+        alert("can't get data from api (nike)")
+    })
