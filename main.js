@@ -8,7 +8,7 @@ fetch(url1)
                 `<th scope="row">${data.id}</th>` +
                 `<td>${data.name}</td>` +
                 `<td>${data.price}</td>` +
-                `<td><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
+                `<td><button class="adidas" class="btn btn-danger" id="${data.id}">delete</button></td>` +
                 `</tr>`;
         })
         let html = htmls.join(``);
@@ -19,12 +19,12 @@ fetch(url1)
     })
     .then((json) => {
         //DELETE REQUEST
-        let deleteBtns = document.getElementsByClassName("btn btn-danger");
-        // console.log(deleteBtns[0])
+        let deleteBtns = document.getElementsByClassName("adidas");
+        console.log(deleteBtns)
         for (let i = 0; i < deleteBtns.length; ++i) {
             deleteBtns[i].onclick = function (e) {
                 console.log(e.target.id);
-                deleteProduct(e.target.id);
+                deleteProduct(url1,e.target.id);
             }
         }
 
@@ -34,9 +34,9 @@ fetch(url1)
             let nameAdi = document.querySelector("#staticEmail2").value;
             let priceAdi = document.querySelector("#inputPassword2").value;
             // let idAdi = lengthAdi++;
-            // console.log(idAdi);
             let idAdi = deleteBtns.length + 1;
-            createProduct(
+            console.log(idAdi);
+            createProduct(url1,
                 {
                     name: nameAdi,
                     id: idAdi,
@@ -49,8 +49,8 @@ fetch(url1)
         alert("can't get data from  api (adidas)")
     })
 
-function createProduct(product) {
-    fetch(url1, {
+function createProduct(url,product) {
+    fetch(url, {
         method: "POST",
         body: JSON.stringify({
             id: product.id,
@@ -63,8 +63,8 @@ function createProduct(product) {
     })
 }
 
-function deleteProduct(index) {
-    fetch(url1 + index, {
+function deleteProduct(url,index) {
+    fetch(url + index, {
         method: "DELETE",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
@@ -85,7 +85,7 @@ fetch(url2)
             ` <th scope="row">${data.id}</th>`+
             `<td>${data.name}</td>`+
             `<td>${data.price}</td>`+
-            `<td><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
+            `<td><button class="nike"class="btn btn-danger" id="${data.id}">delete</button></td>` +
             `</tr>`
         })
         let html = htmls.join(``);
