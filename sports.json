@@ -41,6 +41,11 @@
       "id": 5,
       "name": "giày màu nâu",
       "price": "500$"
+    },
+    {
+      "id": 6,
+      "name": "ultra boost",
+      "price": "110$"
     }
   ]
 }
