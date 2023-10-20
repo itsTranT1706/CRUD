@@ -19,12 +19,12 @@ fetch(url1)
     })
     .then((json) => {
         //DELETE REQUEST
-        let deleteBtns = document.getElementsByClassName("adidas");
-        console.log(deleteBtns)
-        for (let i = 0; i < deleteBtns.length; ++i) {
-            deleteBtns[i].onclick = function (e) {
+        let deleteBtns1 = document.getElementsByClassName("adidas");
+        console.log(deleteBtns1)
+        for (let i = 0; i < deleteBtns1.length; ++i) {
+            deleteBtns1[i].onclick = function (e) {
                 console.log(e.target.id);
-                deleteProduct(url1,e.target.id);
+                deleteProduct(url1, e.target.id);
             }
         }
         //POST REQUEST 
@@ -33,7 +33,7 @@ fetch(url1)
             let nameAdi = document.querySelector("#staticEmail2").value;
             let priceAdi = document.querySelector("#inputPassword2").value;
             // let idAdi = lengthAdi++;
-            let idAdi = deleteBtns.length + 1;
+            let idAdi = deleteBtns1.length + 1;
             console.log(idAdi);
             createProduct(url1,
                 {
@@ -48,7 +48,56 @@ fetch(url1)
         alert("can't get data from  api (adidas)")
     })
 
-function createProduct(url,product) {
+
+//table NIKE
+let url2 = `http://localhost:3000/nike/`;
+fetch(url2)
+    .then(response => response.json())
+    .then((json) => {
+        let htmls = json.map((data) => {
+            return `<tr>` +
+                ` <th scope="row">${data.id}</th>` +
+                `<td>${data.name}</td>` +
+                `<td>${data.price}</td>` +
+                `<td class="nike"><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
+                `</tr>`
+        })
+        let html = htmls.join(``);
+        let table2 = document.querySelector("#table-2");
+        table2.innerHTML = html;
+
+    })
+    .then((json) => {
+        //DELETE REQUEST
+        let deleteBtns2 = document.getElementsByClassName("nike");
+        console.log(deleteBtns2)
+        for (let i = 0; i < deleteBtns2.length; ++i) {
+            deleteBtns2[i].onclick = function (e) {
+                console.log(e.target.id);
+                deleteProduct(url2, e.target.id);
+            }
+        }
+        //POST REQUEST 
+        let submitAdi = document.querySelector("#submitNik");
+        submitAdi.onclick = function () {
+            let nameNik = document.querySelector("#staticEmail1").value;
+            let priceNik = document.querySelector("#inputPassword1").value;
+            let idNik = deleteBtns2.length + 1;
+            console.log(idNik);
+            createProduct(url2,
+                {
+                    name: nameNik,
+                    id: idNik,
+                    price: priceNik
+                })
+        }
+
+    })
+    .catch(() => {
+        alert("can't get data from api (nike)")
+    })
+
+function createProduct(url, product) {
     fetch(url, {
         method: "POST",
         body: JSON.stringify({
@@ -62,7 +111,7 @@ function createProduct(url,product) {
     })
 }
 
-function deleteProduct(url,index) {
+function deleteProduct(url, index) {
     fetch(url + index, {
         method: "DELETE",
         headers: {
@@ -71,27 +120,3 @@ function deleteProduct(url,index) {
     });
 
 }
-
-
-
-//table NIKE
-let url2 = `http://localhost:3000/nike/`;
-fetch(url2)
-    .then(response => response.json())
-    .then((json) => {
-        let htmls = json.map((data) => {
-            return `<tr>`+
-            ` <th scope="row">${data.id}</th>`+
-            `<td>${data.name}</td>`+
-            `<td>${data.price}</td>`+
-            `<td class="nike"><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
-            `</tr>`
-        })
-        let html = htmls.join(``);
-        let table2 = document.querySelector("#table-2");
-        table2.innerHTML = html;
-
-    })
-    .catch(() => {
-        alert("can't get data from api (nike)")
-    })
