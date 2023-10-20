@@ -8,7 +8,7 @@ fetch(url1)
                 `<th scope="row">${data.id}</th>` +
                 `<td>${data.name}</td>` +
                 `<td>${data.price}</td>` +
-                `<td><button class="adidas" class="btn btn-danger" id="${data.id}">delete</button></td>` +
+                `<td class="adidas"><button  class="btn btn-danger" id="${data.id}">delete</button></td>` +
                 `</tr>`;
         })
         let html = htmls.join(``);
@@ -27,7 +27,6 @@ fetch(url1)
                 deleteProduct(url1,e.target.id);
             }
         }
-
         //POST REQUEST 
         let submitAdi = document.querySelector("#submitAdi");
         submitAdi.onclick = function () {
@@ -85,7 +84,7 @@ fetch(url2)
             ` <th scope="row">${data.id}</th>`+
             `<td>${data.name}</td>`+
             `<td>${data.price}</td>`+
-            `<td><button class="nike"class="btn btn-danger" id="${data.id}">delete</button></td>` +
+            `<td class="nike"><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
             `</tr>`
         })
         let html = htmls.join(``);
