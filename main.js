@@ -96,7 +96,7 @@ fetch(url2)
     .catch(() => {
         alert("can't get data from api (nike)")
     })
-
+//CREATE
 function createProduct(url, product) {
     fetch(url, {
         method: "POST",
@@ -110,7 +110,7 @@ function createProduct(url, product) {
         }
     })
 }
-
+//DELETE
 function deleteProduct(url, index) {
     fetch(url + index, {
         method: "DELETE",
