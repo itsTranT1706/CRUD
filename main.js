@@ -35,13 +35,14 @@ fetch(url1)
             let priceAdi = document.querySelector("#inputPassword2").value;
             // let idAdi = lengthAdi++;
             let idAdi = deleteBtns1.length + 1;
-            console.log(idAdi);
+            // console.log(idAdi);
             createProduct(url1,
                 {
                     name: nameAdi,
                     id: idAdi,
                     price: priceAdi
-                })
+                });
+            alert("added!");
         }
 
     })
@@ -85,13 +86,14 @@ fetch(url2)
             let nameNik = document.querySelector("#staticEmail1").value;
             let priceNik = document.querySelector("#inputPassword1").value;
             let idNik = deleteBtns2.length + 1;
-            console.log(idNik);
+            // console.log(idNik);
             createProduct(url2,
                 {
                     name: nameNik,
                     id: idNik,
                     price: priceNik
                 })
+            alert("added!");
         }
 
     })
