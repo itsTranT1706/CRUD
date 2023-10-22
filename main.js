@@ -8,7 +8,8 @@ fetch(url1)
                 `<th scope="row">${data.id}</th>` +
                 `<td>${data.name}</td>` +
                 `<td>${data.price}</td>` +
-                `<td class="adidas"><button  class="btn btn-danger" id="${data.id}">delete</button></td>` +
+                `<td class="adidas"><button  class="btn btn-danger" id="${data.id}">delete</button><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
+                // `<td class="nike"><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
                 `</tr>`;
         })
         let html = htmls.join(``);
@@ -20,7 +21,7 @@ fetch(url1)
     .then((json) => {
         //DELETE REQUEST
         let deleteBtns1 = document.getElementsByClassName("adidas");
-        console.log(deleteBtns1)
+        // console.log(deleteBtns1)
         for (let i = 0; i < deleteBtns1.length; ++i) {
             deleteBtns1[i].onclick = function (e) {
                 console.log(e.target.id);
@@ -61,7 +62,8 @@ fetch(url2)
                 ` <th scope="row">${data.id}</th>` +
                 `<td>${data.name}</td>` +
                 `<td>${data.price}</td>` +
-                `<td class="nike"><button class="btn btn-danger" id="${data.id}">delete</button></td>` +
+                `<td class="nike"><button class="btn btn-danger" id="${data.id}">delete</button><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
+                // `<td class="nike"><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
                 `</tr>`
         })
         let html = htmls.join(``);
@@ -72,7 +74,7 @@ fetch(url2)
     .then((json) => {
         //DELETE REQUEST
         let deleteBtns2 = document.getElementsByClassName("nike");
-        console.log(deleteBtns2)
+        // console.log(deleteBtns2)
         for (let i = 0; i < deleteBtns2.length; ++i) {
             deleteBtns2[i].onclick = function (e) {
                 console.log(e.target.id);
