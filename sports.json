@@ -1,4 +1,21 @@
 {
+  "adidas": [
+    {
+      "id": 1,
+      "name": "giày thượng đình",
+      "price": "110$"
+    },
+    {
+      "id": 2,
+      "name": "ultra boost",
+      "price": "110$"
+    },
+    {
+      "id": 3,
+      "name": "stasmith",
+      "price": "50$"
+    }
+  ],
   "nike": [
     {
       "id": 1,
@@ -14,33 +31,6 @@
       "name": "đôi giày đỏ",
       "price": "250$",
       "id": 3
-    }
-  ],
-  "adidas": [
-    {
-      "id": 1,
-      "name": "giày thượng đình",
-      "price": "110$"
-    },
-    {
-      "id": 2,
-      "name": "hello",
-      "price": "110$"
-    },
-    {
-      "id": 4,
-      "name": "hello",
-      "price": "500$"
-    },
-    {
-      "id": 5,
-      "name": "giày màu nâu",
-      "price": "500$"
-    },
-    {
-      "id": 6,
-      "name": "ultra boost",
-      "price": "110$"
     }
   ]
 }
