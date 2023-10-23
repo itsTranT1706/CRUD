@@ -126,3 +126,16 @@ function deleteProduct(url, index) {
     });
 
 }
+//EDIT
+function editProduct(url,index,product) {
+    fetch(url+index, {
+        method: "PATCH",
+        body: JSON.stringify({
+            name: product.name,
+            price: product.price
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+}
