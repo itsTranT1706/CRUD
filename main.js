@@ -26,7 +26,7 @@ fetch(url1)
             deleteBtns1[i].onclick = function (e) {
                 console.log(e.target.id);
                 deleteProduct(url1, e.target.id);
-                alert("deleted!");
+                
             }
         }
         //POST REQUEST 
@@ -79,7 +79,7 @@ fetch(url2)
             deleteBtns2[i].onclick = function (e) {
                 console.log(e.target.id);
                 deleteProduct(url2, e.target.id);
-                alert("deleted!");
+                
             }
         }
         //POST REQUEST 
