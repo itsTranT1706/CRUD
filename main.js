@@ -24,8 +24,8 @@ fetch(url1)
         // console.log(deleteBtns1)
         for (let i = 0; i < deleteBtns1.length; ++i) {
             deleteBtns1[i].onclick = function (e) {
-                console.log(e.target.id);
                 deleteProduct(url1, e.target.id);
+                console.log(e.target.id);
 
             }
         }
@@ -77,8 +77,8 @@ fetch(url2)
         // console.log(deleteBtns2)
         for (let i = 0; i < deleteBtns2.length; ++i) {
             deleteBtns2[i].onclick = function (e) {
-                console.log(e.target.id);
                 deleteProduct(url2, e.target.id);
+                console.log(e.target.id);
 
             }
         }
@@ -124,7 +124,7 @@ function deleteProduct(url, index) {
             "Content-type": "application/json; charset=UTF-8"
         }
     });
-
+    
 }
 //EDIT
 function editProduct(url, index, product) {

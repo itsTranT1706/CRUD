@@ -4,7 +4,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
+    position: relative;
 }
 
 .neonText {
@@ -61,4 +61,13 @@ td button  {
     margin: 5px;
 }
 
-
+#save {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background-color: rgb(247, 245, 245);
+    display: block;
+    border-style: solid;
+    border-color: gray;
+    
+}
