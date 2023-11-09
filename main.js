@@ -139,3 +139,12 @@ function editProduct(url, index, product) {
         }
     })
 }
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.querySelector("#save").style.top = "50px";
+  } else {
+    document.querySelector("#save").style.top = "-50px";
+  }
+}
