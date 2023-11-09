@@ -63,11 +63,16 @@ td button  {
 
 #save {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 30%;
     background-color: rgb(247, 245, 245);
     display: block;
     border-style: solid;
     border-color: gray;
     
+}
+.title {
+    background-color: rgb(226, 215, 215);
+    border-color: gray;
+    border-style: solid;
 }
