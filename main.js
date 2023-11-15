@@ -4,13 +4,12 @@ fetch(url1)
     .then(response => response.json())
     .then((json) => {
         let htmls = json.map((data) => {
-            return `<tr>` +
-                `<th scope="row">${data.id}</th>` +
-                `<td>${data.name}</td>` +
-                `<td>${data.price}</td>` +
-                `<td class="adidas"><button  class="btn btn-danger" id="${data.id}">delete</button><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
-                // `<td class="nike"><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
-                `</tr>`;
+            return `<tr>
+                <th scope="row">${data.id}</th>
+                <td>${data.name}</td>
+                <td>${data.price}</td>
+                <td><button  class="btn btn-danger" class="deleteAdidas" id="${data.id}">delete</button><button class="btn btn-warning" id="${data.id}">edit</button></td>
+                </tr>`;
         })
         let html = htmls.join(``);
         let table1 = document.querySelector("#table-1");
@@ -20,8 +19,8 @@ fetch(url1)
     })
     .then((json) => {
         //DELETE REQUEST
-        let deleteBtns1 = document.getElementsByClassName("adidas");
-        // console.log(deleteBtns1)
+        let deleteBtns1 = document.querySelectorAll(".deleteAdidas");
+        console.log(deleteBtns1)
         for (let i = 0; i < deleteBtns1.length; ++i) {
             deleteBtns1[i].onclick = function (e) {
                 deleteProduct(url1, e.target.id);
@@ -58,13 +57,12 @@ fetch(url2)
     .then(response => response.json())
     .then((json) => {
         let htmls = json.map((data) => {
-            return `<tr>` +
-                ` <th scope="row">${data.id}</th>` +
-                `<td>${data.name}</td>` +
-                `<td>${data.price}</td>` +
-                `<td class="nike"><button class="btn btn-danger" id="${data.id}">delete</button><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
-                // `<td class="nike"><button class="btn btn-warning" id="${data.id}">edit</button></td>` +
-                `</tr>`
+            return `<tr>
+                 <th scope="row">${data.id}</th>
+                <td>${data.name}</td>
+                <td>${data.price}</td>
+                <td><button class="btn btn-danger"  class="deleteNike" id="${data.id}">delete</button><button class="btn btn-warning" id="edit-${data.id}">edit</button></td>
+                </tr>`
         })
         let html = htmls.join(``);
         let table2 = document.querySelector("#table-2");
@@ -73,7 +71,7 @@ fetch(url2)
     })
     .then((json) => {
         //DELETE REQUEST
-        let deleteBtns2 = document.getElementsByClassName("nike");
+        let deleteBtns2 = document.getElementsByClassName("deleteNike");
         // console.log(deleteBtns2)
         for (let i = 0; i < deleteBtns2.length; ++i) {
             deleteBtns2[i].onclick = function (e) {
@@ -97,7 +95,8 @@ fetch(url2)
                 })
             alert("added!");
         }
-
+        //PATCH REQUEST
+        let 
     })
     .catch(() => {
         alert("can't get data from api (nike)")
@@ -138,13 +137,4 @@ function editProduct(url, index, product) {
             "Content-type": "application/json; charset=UTF-8"
         }
     })
-}
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.querySelector("#save").style.top = "50px";
-  } else {
-    document.querySelector("#save").style.top = "-50px";
-  }
 }
