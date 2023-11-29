@@ -13,7 +13,22 @@
     {
       "id": 3,
       "name": "stasmith",
-      "price": "50$"
+      "price": "150$"
+    },
+    {
+      "id": 4,
+      "name": "adidas",
+      "price": "500$"
+    },
+    {
+      "id": 5,
+      "name": "hello",
+      "price": "110$"
+    },
+    {
+      "id": 6,
+      "name": "jordan",
+      "price": "99$"
     }
   ],
   "nike": [
@@ -31,6 +46,23 @@
       "name": "đôi giày đỏ",
       "price": "250$",
       "id": 3
+    }
+  ],
+  "courses": [
+    {
+      "id": 2,
+      "name": "Toán xác suất thống kê",
+      "description": "lớp học vui vẻ"
+    },
+    {
+      "name": "Learning AI",
+      "description": "computer access",
+      "id": 4
+    },
+    {
+      "name": "learning vercel",
+      "description": "server linux",
+      "id": 5
     }
   ]
 }
